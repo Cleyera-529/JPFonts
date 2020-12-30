@@ -1,3 +1,3 @@
 # JPFonts
-Mod for Terraria
+Mod for Terraria  
 Add Japanese Fonts
