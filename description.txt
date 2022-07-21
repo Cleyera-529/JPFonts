@@ -1,0 +1,7 @@
+===========================================
+[c/dc3232:-Description-]
+===========================================
+Uses custom fonts containing Kanamoji.
+
+If you have issues, visit my workshop and report it.
+===========================================
