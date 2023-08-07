@@ -1,6 +1,5 @@
 using ReLogic.Content;
 using ReLogic.Graphics;
-using Terraria;
 using Terraria.GameContent;
 using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
@@ -9,6 +8,8 @@ namespace JPFonts
 {
     public class JPFonts : Mod
 	{
+        public bool enabled;
+
         internal static JPFonts Instance;
         public JPFonts()
         {
@@ -37,13 +38,18 @@ namespace JPFonts
                 FontAssets.DeathText = Request<DynamicSpriteFont>("JPFonts/Fonts/Death_Text", mode);
                 FontAssets.CombatText[0] = Request<DynamicSpriteFont>("JPFonts/Fonts/Combat_Text", mode);
                 FontAssets.CombatText[1] = Request<DynamicSpriteFont>("JPFonts/Fonts/Combat_Crit", mode);
+                enabled = true;
                 return;
             }
-            FontAssets.ItemStack = Request<DynamicSpriteFont>("Terraria/Fonts/Item_Stack", mode);
-            FontAssets.MouseText = Request<DynamicSpriteFont>("Terraria/Fonts/Mouse_Text", mode);
-            FontAssets.DeathText = Request<DynamicSpriteFont>("Terraria/Fonts/Death_Text", mode);
-            FontAssets.CombatText[0] = Request<DynamicSpriteFont>("Terraria/Fonts/Combat_Text", mode);
-            FontAssets.CombatText[1] = Request<DynamicSpriteFont>("Terraria/Fonts/Combat_Crit", mode);
+            if (enabled)
+            {
+                FontAssets.ItemStack = Request<DynamicSpriteFont>("Terraria/Fonts/Item_Stack", mode);
+                FontAssets.MouseText = Request<DynamicSpriteFont>("Terraria/Fonts/Mouse_Text", mode);
+                FontAssets.DeathText = Request<DynamicSpriteFont>("Terraria/Fonts/Death_Text", mode);
+                FontAssets.CombatText[0] = Request<DynamicSpriteFont>("Terraria/Fonts/Combat_Text", mode);
+                FontAssets.CombatText[1] = Request<DynamicSpriteFont>("Terraria/Fonts/Combat_Crit", mode);
+                enabled = false;
+            }
         }
     }
 }

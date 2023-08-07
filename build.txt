@@ -1,6 +1,6 @@
 displayName = Kanamoji Fonts
 author = Cleyera
-version = 0.6
+version = 0.7
 homepage = https://steamcommunity.com/sharedfiles/filedetails/?id=2581155970
 hideCode = true
 hideResources = true
